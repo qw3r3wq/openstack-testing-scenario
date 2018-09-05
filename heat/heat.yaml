@@ -1,0 +1,1123 @@
+---
+description: "HOT template for creating 1 instance with 1 nic and 100 ips on it BY:MAYANK SHARMA
+modified by Ruslanas Gzibovskis :) to add more servers and IP"
+heat_template_version: 2013-05-23
+parameters:
+  image_id:
+    default: centos
+    description: "Image Name"
+    type: string
+  public_net:
+    default: ####Network_ID####
+    description: "public network id"
+    type: string
+  secgroup_id:
+    default: default
+    description: "Id of the security groupe"
+    type: string
+resources:
+  server1x10:
+    properties:
+      flavor: small
+      image:
+        get_param: image_id
+      name: Server1x10
+      networks:
+        - 
+          port:
+            get_resource: port1x10
+    type: "OS::Nova::Server"
+  server2x10:
+    properties:
+      flavor: m1.small
+      image:
+        get_param: image_id
+      name: Server2x10
+      networks:
+        - 
+          port:
+            get_resource: port2x10
+    type: "OS::Nova::Server"
+  server3x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server3x10
+      networks:
+        - 
+          port:
+            get_resource: port3x10
+    type: "OS::Nova::Server"
+  server4x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server4x10
+      networks:
+        - 
+          port:
+            get_resource: port4x10
+    type: "OS::Nova::Server"
+  server5x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server5x10
+      networks:
+        - 
+          port:
+            get_resource: port5x10
+    type: "OS::Nova::Server"
+  server6x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server6x10
+      networks:
+        - 
+          port:
+            get_resource: port6x10
+    type: "OS::Nova::Server"
+  server7x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server7x10
+      networks:
+        - 
+          port:
+            get_resource: port7x10
+    type: "OS::Nova::Server"
+  server8x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server8x10
+      networks:
+        - 
+          port:
+            get_resource: port8x10
+    type: "OS::Nova::Server"
+  server9x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server9x10
+      networks:
+        - 
+          port:
+            get_resource: port9x10
+    type: "OS::Nova::Server"
+  server10x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server10x10
+      networks:
+        - 
+          port:
+            get_resource: port10x10
+    type: "OS::Nova::Server"
+  server11x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server11x10
+      networks:
+        - 
+          port:
+            get_resource: port11x10
+    type: "OS::Nova::Server"
+  server12x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server12x10
+      networks:
+        - 
+          port:
+            get_resource: port12x10
+    type: "OS::Nova::Server"
+  server13x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server13x10
+      networks:
+        - 
+          port:
+            get_resource: port13x10
+    type: "OS::Nova::Server"
+  server14x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server14x10
+      networks:
+        - 
+          port:
+            get_resource: port14x10
+    type: "OS::Nova::Server"
+  server15x10:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server15x10
+      networks:
+        - 
+          port:
+            get_resource: port15x10
+    type: "OS::Nova::Server"
+  server1x25:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server1x25
+      networks:
+        - 
+          port:
+            get_resource: port1x25
+    type: "OS::Nova::Server"
+  server2x25:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server2x25
+      networks:
+        - 
+          port:
+            get_resource: port2x25
+    type: "OS::Nova::Server"
+  server20:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server20
+      networks:
+        - 
+          port:
+            get_resource: port20
+    type: "OS::Nova::Server"
+  server70:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server70
+      networks:
+        - 
+          port:
+            get_resource: port70
+    type: "OS::Nova::Server"
+  server85:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server85
+      networks:
+        - 
+          port:
+            get_resource: port85
+    type: "OS::Nova::Server"
+  server110:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server110
+      networks:
+        - 
+          port:
+            get_resource: port110
+    type: "OS::Nova::Server"
+  server180:
+    properties:
+      flavor: vgte.small
+      image:
+        get_param: image_id
+      name: Server180
+      networks:
+        - 
+          port:
+            get_resource: port180
+    type: "OS::Nova::Server"
+  port1x10:
+    properties:
+      name: port1x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port2x10:
+    properties:
+      name: port2x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port3x10:
+    properties:
+      name: port3x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port4x10:
+    properties:
+      name: port4x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port5x10:
+    properties:
+      name: port5x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port6x10:
+    properties:
+      name: port6x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port7x10:
+    properties:
+      name: port7x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port8x10:
+    properties:
+      name: port8x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port9x10:
+    properties:
+      name: port9x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port10x10:
+    properties:
+      name: port10x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port11x10:
+    properties:
+      name: port11x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port12x10:
+    properties:
+      name: port12x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port13x10:
+    properties:
+      name: port13x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port14x10:
+    properties:
+      name: port14x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port15x10:
+    properties:
+      name: port15x10
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port1x25:
+    properties:
+      name: port1x25
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port2x25:
+    properties:
+      name: port2x25
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port20:
+    properties:
+      name: port20
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port70:
+    properties:
+      name: port70
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port85:
+    properties:
+      name: port85
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port110:
+    properties:
+      name: port110
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
+  port180:
+    properties:
+      name: port180
+      fixed_ips:
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+        - subnet_id: ####SubNet_ID####
+      network_id: ####Network_ID####
+      security_groups:
+        - 
+          get_param: secgroup_id
+    type: "OS::Neutron::Port"
