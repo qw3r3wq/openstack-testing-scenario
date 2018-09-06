@@ -4,7 +4,7 @@ modified by Ruslanas Gzibovskis :) to add more servers and IP"
 heat_template_version: 2013-05-23
 parameters:
   flavor_name:
-    default: vran-vsd-2
+    default: m1.tiny
     type: string
   image_id:
     default: centos
