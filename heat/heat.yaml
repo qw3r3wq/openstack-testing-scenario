@@ -10,13 +10,17 @@ parameters:
     default: centos
     description: "Image Name"
     type: string
-  public_net:
+  use_net:
     default: d8772e7a-07b1-4273-beb6-860fb54e54c1
-    description: "public network id"
+    description: "network id which should be used by default"
     type: string
   secgroup_id:
     default: default
-    description: "Id of the security groupe"
+    description: "Id of the security group"
+    type: string
+  use_subnet:
+    default: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+    description: "Id of the subnet to use"
     type: string
 resources:
   server1x10:
@@ -287,18 +291,18 @@ resources:
     properties:
       name: port1x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -307,18 +311,18 @@ resources:
     properties:
       name: port2x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -327,18 +331,18 @@ resources:
     properties:
       name: port3x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -347,18 +351,18 @@ resources:
     properties:
       name: port4x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -367,18 +371,18 @@ resources:
     properties:
       name: port5x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -387,18 +391,18 @@ resources:
     properties:
       name: port6x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -407,18 +411,18 @@ resources:
     properties:
       name: port7x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -427,18 +431,18 @@ resources:
     properties:
       name: port8x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -447,18 +451,18 @@ resources:
     properties:
       name: port9x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -467,18 +471,18 @@ resources:
     properties:
       name: port10x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -487,18 +491,18 @@ resources:
     properties:
       name: port11x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -507,18 +511,18 @@ resources:
     properties:
       name: port12x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -527,18 +531,18 @@ resources:
     properties:
       name: port13x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -547,18 +551,18 @@ resources:
     properties:
       name: port14x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -567,18 +571,18 @@ resources:
     properties:
       name: port15x10
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -587,33 +591,33 @@ resources:
     properties:
       name: port1x25
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -622,33 +626,33 @@ resources:
     properties:
       name: port2x25
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -657,28 +661,28 @@ resources:
     properties:
       name: port20
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -687,78 +691,78 @@ resources:
     properties:
       name: port70
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -767,93 +771,93 @@ resources:
     properties:
       name: port85
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -862,118 +866,118 @@ resources:
     properties:
       name: port110
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
@@ -982,188 +986,188 @@ resources:
     properties:
       name: port180
       fixed_ips:
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
-        - subnet_id: b4cb500a-aa47-4f74-8fe4-d68ddc94c94b
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
+        - subnet_id: { get_param: use_subnet }
       network_id:
-        get_param: public_net
+        get_param: use_net
       security_groups:
         - 
           get_param: secgroup_id
