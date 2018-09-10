@@ -1,0 +1,9 @@
+---
+- name: enable sysstat
+  lineinfile:
+    path: /etc/default/sysstat
+    regexp: '^ENABLED='
+    line: 'ENABLED="true"'
+    owner: root
+    group: root
+    mode: 0644

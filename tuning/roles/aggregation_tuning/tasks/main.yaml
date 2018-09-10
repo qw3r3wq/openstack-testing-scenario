@@ -1,0 +1,17 @@
+
+---
+- name: enable schedule for host aggregation
+  ini_file:
+    path: /etc/nova/nova.conf
+    section: DEFAULT
+    option: scheduler_default_filters
+    value: AggregateInstanceExtraSpecsFilter,RetryFilter,AvailabilityZoneFilter,RamFilter,ComputeFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,ServerGroupAntiAffinityFilter,ServerGroupAffinityFilter,AggregateMultiTenancyIsolation,AggregateCoreFilter,DiskFilter
+    state: present
+    create: yes
+    owner: root
+    group: nova
+    no_extra_spaces: yes
+    mode: 0640
+    backup: yes
+  notify:
+  - restart nova-compute

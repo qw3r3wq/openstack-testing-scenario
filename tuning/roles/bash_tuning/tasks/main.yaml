@@ -1,5 +1,4 @@
 ---
 - name: copy profile file
-  template: src=os-tune.sh dest=/etc/profile.d/os-tune.sh
-- name: Change ownership of os-tune.sh
-  file: path=/etc/profile.d/os-tune.sh mode=0555 state=touch
+  template: src=os-tune.sh dest=/etc/profile.d/os-tune.sh mode=0555
+  
