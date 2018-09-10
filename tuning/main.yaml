@@ -1,0 +1,9 @@
+---
+- hosts: host_group
+  gather_facts: yes
+  become: yes
+  
+  roles:
+    - bash_tuning
+#    - aggregation_tuning
+#    - sysstat_tuning
