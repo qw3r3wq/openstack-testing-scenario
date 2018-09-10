@@ -10,6 +10,7 @@ controller-[1:3]
 [compute]
 compute-[1:4]
 compute-access-with-root-hosts-[7:9] ansible_user=root</pre>
+execution: '''ansible-playbook -i hosts main.yaml'''
 
 sysstat is already installed on ubuntu so just enabling it.
 
