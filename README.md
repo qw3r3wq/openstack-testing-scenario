@@ -5,7 +5,7 @@ Here you can find heat templates
 ## tuning
 Ansible playbook to set some extra specs on OS level. Tested on bubuntu Mitaka Legacy stack.
 <i><b>hosts</b></i> file should contain compute section, example below:
-<pre>freak-without-dns ansible_connection=ssh ansible_user=mpdehaan ansible_port=5555 ansible_host=192.0.2.50
+<pre>freak-without-dns-and-without-group ansible_connection=ssh ansible_user=mpdehaan ansible_port=5555 ansible_host=192.0.2.50
 [controller]
 controller-[1:3]
 localhost ansible_connection=local
