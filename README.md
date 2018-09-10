@@ -4,7 +4,7 @@ Here you can find heat templates
 
 ## tuning
 Ansible playbook to set some extra specs on OS level. Tested on bubuntu Mitaka Legacy stack.
-<i>hosts</i> file should contain compute section, example below:
+<i><b>hosts</b></i> file should contain compute section, example below:
 <pre>[controller]
 controller-[1:3]
 [compute]
