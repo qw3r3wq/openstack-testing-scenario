@@ -1,0 +1,17 @@
+
+---
+- name: enable schedule for host aggregation
+  ini_file:
+    path: /etc/neutron/neutron.conf
+    section: DEFAULT
+    option: max_fixed_ips_per_port
+    value: 12
+    state: present
+    create: yes
+    owner: root
+    group: neutron
+    no_extra_spaces: yes
+    mode: 0640
+    backup: yes
+  notify:
+  - restart neutron-openvswitch-agent

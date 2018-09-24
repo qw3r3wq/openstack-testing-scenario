@@ -11,3 +11,11 @@
   become: yes
   roles:
     - aggregation_tuning
+    - max_fixed_ips_tuning-compute
+
+- hosts: controller
+  gather_facts: no
+  become: yes
+  roles:
+    - aggregation_tuning
+    - max_fixed_ips_tuning-controller
