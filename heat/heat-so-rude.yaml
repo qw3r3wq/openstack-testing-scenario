@@ -1,6 +1,5 @@
 ---
-description: "HOT template for creating 1 instance with 1 nic and 100 ips on it BY:MAYANK SHARMA
-modified by Ruslanas Gzibovskis :) to add more servers and IP"
+description: "HOT template for creating 1 instance with 1 nic and 100 is. By Ruslanas Gzibovskis :) to add more servers and IP"
 heat_template_version: 2013-05-23
 parameters:
   flavor_name:
